@@ -18,13 +18,13 @@ class MySpider(scrapy.Spider):
             # 获取每个div中的课程路径
             item['url'] = 'http://www.imooc.com' + box.xpath('.//@href').extract()[0]
             # 获取div中的课程标题
-            item['title'] = box.xpath('.//img/@alt').extract()[0].strip()
+            item['title'] = box.xpath('.//div[@class="moco-course-box"]/img/@alt').extract()[0].strip()
             # 获取div中的标题图片地址
-            item['image_url'] = box.xpath('.//@src').extract()[0]
+            item['image_url'] = box.xpath('.//div[@class="moco-course-box"]/img/@src').extract()[0]
             # 获取div中的学生人数
-            item['student'] = box.xpath('.//span/text()').extract()[0].strip()[:-3]
+            item['student'] = box.xpath('.//div[@class="moco-course-bottom"]/span/text()').extract()[0].strip()[:-3]
             # 获取div中的课程简介
-            item['introduction'] = box.xpath('.//p/text()').extract()[0].strip()
+            item['introduction'] = box.xpath('.//div[@class="moco-course-intro"]/p/text()').extract()[0].strip()
             # 返回信息
             yield item
         # url跟进开始
