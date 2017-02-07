@@ -11,3 +11,5 @@ class CourseItem(scrapy.Item):
     introduction = scrapy.Field()
     # 学习人数
     student = scrapy.Field()
+    # 图片地址
+    image_path = scrapy.Field()

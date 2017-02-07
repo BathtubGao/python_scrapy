@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'python_scrapy.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-
+IMAGES_STORE = 'E:\\img\\'
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -64,9 +64,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'python_scrapy.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'python_scrapy.MyPipelines.MyPipeline': 100,
+   'python_scrapy.ImgPipelines.ImgPipeline': 1,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
