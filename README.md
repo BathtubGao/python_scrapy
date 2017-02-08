@@ -6,6 +6,7 @@ scrapy练习
 文档：http://scrapy-chs.readthedocs.io/zh_CN/0.24/intro/overview.html
 
 
+
 2017-02-08 优化：
 
 数据改成存入mysql数据库，使用pymysql连接数据库。
