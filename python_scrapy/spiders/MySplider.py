@@ -29,10 +29,10 @@ class MySpider(scrapy.Spider):
             yield item
         # url跟进开始
         # 获取下一页的url信息
-        url = response.xpath("//a[contains(text(),'下一页')]/@href").extract()
-        if url:
-            # 将信息组合成下一页的url
-            page = 'http://www.imooc.com' + url[0]
-            # 返回url
-            yield scrapy.Request(page, callback=self.parse)
-        # url跟进结束
+        # url = response.xpath("//a[contains(text(),'下一页')]/@href").extract()
+        # if url:
+        #     # 将信息组合成下一页的url
+        #     page = 'http://www.imooc.com' + url[0]
+        #     # 返回url
+        #     yield scrapy.Request(page, callback=self.parse)
+        # # url跟进结束
